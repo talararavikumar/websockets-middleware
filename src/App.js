@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 
 
-function App({dispatch}) {
-
+function App(props) {
+  console.log(props)
   useEffect(()=>{
-   dispatch({
+    props.dispatch({
     type: 'WEBSOCKET:CONNECT',
     payload: { url:'wss://api-pub.bitfinex.com/ws' }
   })
